@@ -1,20 +1,14 @@
 package studytracker.model;
 
 public class Subject {
-    private int id;
     private String name;
     private int totalHoursStudied;
     private String difficulty;
 
-    public Subject(int id, String name, int totalHoursStudied,String difficulty) {
-        this.id = id;
+    public Subject(String name, int totalHoursStudied,String difficulty) {
         this.name = name;
         this.totalHoursStudied = totalHoursStudied;
         this.difficulty = difficulty;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setName(String name) {
@@ -27,10 +21,6 @@ public class Subject {
 
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {
