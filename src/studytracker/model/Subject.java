@@ -2,12 +2,12 @@ package studytracker.model;
 
 public class Subject {
     private String name;
-    private int totalHoursStudied;
+    private int totalMinutesStudied;
     private String difficulty;
 
-    public Subject(String name, int totalHoursStudied,String difficulty) {
+    public Subject(String name, int totalMinutesStudied,String difficulty) {
         this.name = name;
-        this.totalHoursStudied = totalHoursStudied;
+        this.totalMinutesStudied = totalMinutesStudied;
         this.difficulty = difficulty;
     }
 
@@ -15,8 +15,8 @@ public class Subject {
         this.name = name;
     }
 
-    public void setTotalHoursStudied(int totalHoursStudied) {
-        this.totalHoursStudied = totalHoursStudied;
+    public void setTotalMinutesStudied(int totalMinutesStudied) {
+        this.totalMinutesStudied = totalMinutesStudied;
     }
 
     public void setDifficulty(String difficulty) {
@@ -27,12 +27,18 @@ public class Subject {
         return name;
     }
 
-    public int getTotalHoursStudied() {
-        return totalHoursStudied;
+    public int getTotalMinutesStudied() {
+        return totalMinutesStudied;
     }
 
     public String getDifficulty() {
         return difficulty;
+    }
+
+    public void addStudyTime(int minutes) {
+        if (minutes > 0) {
+            this.totalMinutesStudied += minutes;
+        }
     }
 }
 

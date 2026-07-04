@@ -34,4 +34,8 @@ public class StudySession {
     public String getDate() {
         return date;
     }
+
+    public void applyToSubject() {
+        subject.addStudyTime(durationMinutes);
+    }
 }
