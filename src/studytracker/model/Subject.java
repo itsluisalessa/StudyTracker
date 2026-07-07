@@ -16,6 +16,11 @@ public class Subject {
         this.studySessions = new ArrayList<>();
     }
 
+    @Override
+    public String toString() {
+        return "Name: "+ name + " | Total minutes Studied: "+ totalMinutesStudied + " | Difficulty: "+ difficulty + " | Study sessions: "+ studySessions;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

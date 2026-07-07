@@ -12,6 +12,11 @@ public class Student {
         this.subjects = new ArrayList<>();
     }
 
+    @Override
+    public String toString() {
+        return "Name: "+ name + " | Subjects: "+ subjects;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

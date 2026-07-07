@@ -9,6 +9,11 @@ public class StudySession {
         this.date = date;
     }
 
+    @Override
+    public String toString() {
+        return "Duration minutes: "+ durationMinutes + " | Date: "+ date;
+    }
+
     public void setDate(String date) {
         this.date = date;
     }
