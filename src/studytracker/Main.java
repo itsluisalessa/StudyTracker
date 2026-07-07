@@ -3,6 +3,9 @@ package studytracker;
 import studytracker.model.Student;
 import studytracker.model.Subject;
 import studytracker.model.StudySession;
+import studytracker.service.StudentService;
+import studytracker.service.StudySessionService;
+import studytracker.service.SubjectService;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,15 +14,11 @@ public class Main {
                 "Luísa"
         );
 
-        Subject java = new Subject(
+        SubjectService subjectService = new SubjectService();
+
+        Subject java = subjectService.createSubject(
                 "Java",
                 0,
-                "Easy"
-        );
-
-        Subject sql = new Subject(
-                "sql",
-                30,
                 "Easy"
         );
 
@@ -28,14 +27,15 @@ public class Main {
                 "2026-07-04"
         );
 
-        java.addStudySession(session);
+        StudySessionService studySessionService = new StudySessionService();
 
-        luisa.addSubject(java);
-        luisa.addSubject(sql);
+        studySessionService.registerSession(java, session);
 
-        System.out.println("Subject: " + java.getName());
-        System.out.println("Total minutes studied: " + java.getTotalMinutesStudied());
-        System.out.println("Luísa's subjects: "+ luisa.getSubjects());
-        System.out.println("Luisa's Java's StudySessions: "+ java.getStudySessions());
+        StudentService studentService = new StudentService();
+
+        studentService.addSubject(luisa, java);
+
+        System.out.println(java);
+        System.out.println(luisa);
     }
 }
