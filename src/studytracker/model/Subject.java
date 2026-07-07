@@ -1,22 +1,23 @@
 package studytracker.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Subject {
     private String name;
     private int totalMinutesStudied;
     private String difficulty;
+    private List<StudySession> studySessions;
 
     public Subject(String name, int totalMinutesStudied,String difficulty) {
         this.name = name;
         this.totalMinutesStudied = totalMinutesStudied;
         this.difficulty = difficulty;
+        this.studySessions = new ArrayList<>();
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setTotalMinutesStudied(int totalMinutesStudied) {
-        this.totalMinutesStudied = totalMinutesStudied;
     }
 
     public void setDifficulty(String difficulty) {
@@ -35,10 +36,19 @@ public class Subject {
         return difficulty;
     }
 
+    public List<StudySession> getStudySessions() {
+        return studySessions;
+    }
+
     public void addStudyTime(int minutes) {
         if (minutes > 0) {
             this.totalMinutesStudied += minutes;
         }
+    }
+
+    public void addStudySession(StudySession session) {
+        this.studySessions.add(session);
+        this.addStudyTime(session.getDurationMinutes());
     }
 }
 

@@ -1,18 +1,12 @@
 package studytracker.model;
 
 public class StudySession {
-    private Subject subject;
     private int durationMinutes;
     private String date;
 
-    public StudySession(Subject subject, int durationMinutes, String date) {
-        this.subject = subject;
+    public StudySession(int durationMinutes, String date) {
         this.durationMinutes = durationMinutes;
         this.date = date;
-    }
-
-    public void setSubject(Subject subject) {
-        this.subject = subject;
     }
 
     public void setDate(String date) {
@@ -23,19 +17,11 @@ public class StudySession {
         this.durationMinutes = durationMinutes;
     }
 
-    public Subject getSubject() {
-        return subject;
-    }
-
     public int getDurationMinutes() {
         return durationMinutes;
     }
 
     public String getDate() {
         return date;
-    }
-
-    public void applyToSubject() {
-        subject.addStudyTime(durationMinutes);
     }
 }

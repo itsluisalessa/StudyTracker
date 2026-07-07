@@ -23,13 +23,12 @@ public class Main {
                 "Easy"
         );
 
-        StudySession session1 = new StudySession(
-                java,
+        StudySession session = new StudySession(
                 60,
                 "2026-07-04"
         );
 
-        java.addStudyTime(session1.getDurationMinutes());
+        java.addStudySession(session);
 
         luisa.addSubject(java);
         luisa.addSubject(sql);
@@ -37,5 +36,6 @@ public class Main {
         System.out.println("Subject: " + java.getName());
         System.out.println("Total minutes studied: " + java.getTotalMinutesStudied());
         System.out.println("Luísa's subjects: "+ luisa.getSubjects());
+        System.out.println("Luisa's Java's StudySessions: "+ java.getStudySessions());
     }
 }
