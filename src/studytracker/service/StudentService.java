@@ -3,19 +3,17 @@ package studytracker.service;
 import studytracker.model.Student;
 import studytracker.model.Subject;
 
+import java.util.List;
+
 public class StudentService {
 
     public void addSubject(Student student, Subject subject) {
 
-        String newSubjectName = subject.getName().toUpperCase();
+        List<Subject> studentSubjects = student.getSubjects();
 
-        int subjectSize = student.getSubjects().size();
+        for (Subject existingSubject : studentSubjects) {
 
-        for (int i = 0; i < subjectSize; i++) {
-            String nameSubject = student.getSubjects().get(i).getName();
-            String nameSubjectUC = nameSubject.toUpperCase();
-
-            if (newSubjectName.equals(nameSubjectUC)) {
+            if (existingSubject.getName().equalsIgnoreCase(subject.getName())) {
                 return;
             }
         }
