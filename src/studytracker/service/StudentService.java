@@ -32,4 +32,17 @@ public class StudentService {
         }
         return null;
     }
+
+    public boolean updateDifficulty(Student student, String subjectName, String newDifficulty) {
+
+        Subject subject = findSubjectByName(student, subjectName);
+
+        if (subject == null) {
+            return false;
+        }
+
+        subject.setDifficulty(newDifficulty);
+
+        return true;
+    }
 }
