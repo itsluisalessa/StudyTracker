@@ -45,4 +45,8 @@ public class StudentService {
 
         return true;
     }
+
+    public List<Subject> listSubjects(Student student) {
+        return student.getSubjects();
+    }
 }
