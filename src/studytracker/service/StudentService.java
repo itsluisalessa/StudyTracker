@@ -19,4 +19,17 @@ public class StudentService {
         }
         student.addSubject(subject);
     }
+
+    public Subject findSubjectByName(Student student, String subjectName) {
+
+        List<Subject> studentSubjects = student.getSubjects();
+
+        for (Subject subject : studentSubjects) {
+
+            if (subjectName.equalsIgnoreCase(subject.getName())) {
+                return subject;
+            }
+        }
+        return null;
+    }
 }
