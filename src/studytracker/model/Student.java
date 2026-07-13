@@ -32,5 +32,9 @@ public class Student {
     public void addSubject(Subject subject) {
         this.subjects.add(subject);
     }
+
+    public void removeSubject(Subject subject) {
+        this.subjects.remove(subject);
+    }
 }
 

@@ -49,4 +49,17 @@ public class StudentService {
     public List<Subject> listSubjects(Student student) {
         return student.getSubjects();
     }
+
+    public boolean deleteSubject(Student student, String subjectName) {
+
+        Subject subject = findSubjectByName(student, subjectName);
+
+        if (subject == null) {
+            return false;
+        }
+
+        student.removeSubject(subject);
+
+        return true;
+    }
 }
