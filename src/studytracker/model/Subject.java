@@ -55,5 +55,15 @@ public class Subject {
         this.studySessions.add(session);
         this.addStudyTime(session.getDurationMinutes());
     }
-}
 
+    public String getFormattedStudyTime() {
+
+        int hours = totalMinutesStudied / 60;
+        int minutes = totalMinutesStudied % 60;
+
+        if (minutes < 10) {
+            return hours + "h 0" + minutes + "min";
+        }
+        return hours + "h " + minutes + "min";
+    }
+}
