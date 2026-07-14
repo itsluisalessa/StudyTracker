@@ -4,7 +4,6 @@ import studytracker.model.Student;
 import studytracker.model.Subject;
 import studytracker.model.StudySession;
 import studytracker.service.StudentService;
-import studytracker.service.StudySessionService;
 import studytracker.service.SubjectService;
 
 public class Main {
@@ -26,10 +25,6 @@ public class Main {
                 60,
                 "2026-07-04"
         );
-
-        StudySessionService studySessionService = new StudySessionService();
-
-        studySessionService.registerSession(java, session);
 
         StudentService studentService = new StudentService();
 

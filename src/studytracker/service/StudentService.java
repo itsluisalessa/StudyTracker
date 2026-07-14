@@ -1,6 +1,7 @@
 package studytracker.service;
 
 import studytracker.model.Student;
+import studytracker.model.StudySession;
 import studytracker.model.Subject;
 
 import java.util.List;
@@ -61,5 +62,19 @@ public class StudentService {
         student.removeSubject(subject);
 
         return true;
+    }
+
+    public boolean registerSession(Student student, String subjectName, StudySession studySession) {
+
+        Subject subject = findSubjectByName(student, subjectName);
+
+        if (subject == null) {
+            return false;
+        }
+
+        subject.addStudySession(studySession);
+
+        return true;
+
     }
 }
