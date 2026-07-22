@@ -4,6 +4,9 @@ import studytracker.model.Student;
 import studytracker.model.StudySession;
 import studytracker.model.Subject;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class StudentService {
@@ -76,5 +79,19 @@ public class StudentService {
 
         return true;
 
+    }
+
+    public List<Subject> getSortedSubjects(Student student) {
+
+        List<Subject> subjects = new ArrayList<>(student.getSubjects());
+
+        Collections.sort(subjects, new Comparator<Subject>() {
+            @Override
+            public int compare(Subject first, Subject second) {
+                return second.getTotalMinutesStudied() - first.getTotalMinutesStudied();
+            }
+        });
+
+        return subjects;
     }
 }
