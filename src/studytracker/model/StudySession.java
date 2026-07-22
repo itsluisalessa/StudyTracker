@@ -3,15 +3,22 @@ package studytracker.model;
 public class StudySession {
     private int durationMinutes;
     private String date;
+    private int questionsAnswered;
+    private int correctAnswers;
 
-    public StudySession(int durationMinutes, String date) {
+    public StudySession(int durationMinutes, String date, int questionsAnswered, int correctAnswers) {
         this.durationMinutes = durationMinutes;
         this.date = date;
+        this.questionsAnswered = questionsAnswered;
+        this.correctAnswers = correctAnswers;
     }
 
     @Override
     public String toString() {
-        return "Duration minutes: "+ durationMinutes + " | Date: "+ date;
+        return "Duration minutes: "+ durationMinutes +
+                " | Date: "+ date +
+                " | Question Answered: "+ questionsAnswered +
+                " | Correct Answers: "+ correctAnswers;
     }
 
     public void setDate(String date) {
@@ -28,5 +35,13 @@ public class StudySession {
 
     public String getDate() {
         return date;
+    }
+
+    public int getQuestionsAnswered() {
+        return questionsAnswered;
+    }
+
+    public int getCorrectAnswers() {
+        return correctAnswers;
     }
 }

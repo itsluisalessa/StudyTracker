@@ -18,12 +18,16 @@ public class Main {
         Subject java = subjectService.createSubject(
                 "Java",
                 0,
-                "Easy"
+                "Easy",
+                0,
+                0
         );
 
         StudySession session = new StudySession(
                 60,
-                "2026-07-04"
+                "2026-07-04",
+                0,
+                0
         );
 
         StudentService studentService = new StudentService();
